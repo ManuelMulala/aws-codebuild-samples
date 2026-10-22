@@ -1,6 +1,5 @@
 from locust import HttpUser, task
-
-class User(HttpUser):
+class LoadTestUser(HttpUser):
     @task
-    def home(self):
-        self.client.get("/")
+    def get_post(self):
+        self.client.get("/posts/1")
